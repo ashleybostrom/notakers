@@ -76,6 +76,29 @@ app.post('/api/notes', (req, res) => {
   }
 });
 
+// Delete note
+app.delete('/api/notes/:id', (req, res) => {
+  const id = req.params.id;
+  fs.readFile('./db/db.json', 'utf8', (err, data) => {
+    if (err) {
+      console.log(err)
+    } else {
+      const parsedNotes = JSON.parse(data);
+      const filteredNotes = parsedNotes.filter(note => note.id !== id);
+      
+      // write to db.json
+      fs.writeFile('./db/db.json', JSON.stringify(filteredNotes, null, 4), (writeErr) => {
+        if(writeErr) {
+          console.error('Unable to update db.json' + writeErr);
+        } else {
+          console.info('Successfully updated notes!');
+        }
+      });
+    }
+  });
+  res.status(200).json('Note deleted');
+});
+
 // set up listener
 app.listen(PORT, () => 
   console.log(`Up and running at http://localhost:${PORT}`)
