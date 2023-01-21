@@ -32,8 +32,8 @@ In your terminal, type `node server.js`
 Now you are ready to create, save, and delete notes from your application!
 
 ## Mock-Up
-[Home Screen](./public/assets/notakerhome.png)
-[Notes Screen](./public/assets/notakernote.png)
+![Home Screen](./public/assets/notakerhome.png)
+![Notes Screen](./public/assets/notakernote.png)
 
 ## Links
 1. [Heroku](https://damp-badlands-70707.herokuapp.com/)
