@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-const uuid = require('./helpers/uuid.js');
+const uuid = require('./public/assets/js/uuid');
 
 
 const app = express();
